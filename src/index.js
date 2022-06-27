@@ -7,6 +7,7 @@ const expressHbs = require('express-handlebars');
 const rootDir = require("./utils/path");
 const shopRoutes = require("./routes/shop");
 const adminRoutes = require("./routes/admin");
+const { get404 } = require("./controllers/error");
 
 const app = express();
 
@@ -26,12 +27,9 @@ app.use(
 //Use to serve static content
 app.use(express.static(path.join(rootDir, "public")));
 
-app.use("/product", adminRoutes.routes);
+app.use("/product", adminRoutes);
 app.use("/", shopRoutes);
 
-app.use("/", (req, res) => {
-  //res.sendFile(path.join(rootDir, "views", "404.html"));
-  res.render('404', {pageTitle: 'Page Not Found'});
-});
+app.use("/", get404);
 
 app.listen(3000);
