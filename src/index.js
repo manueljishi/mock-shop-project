@@ -16,8 +16,8 @@ app.engine('handlebars', expressHbs.engine({
   layoutsDir: 'src/views/layouts',
   defaultLayout: 'main'
 }))
-app.set('view engine', 'handlebars')
-app.set('views', 'src/views')
+app.set('view engine', 'ejs');
+app.set('views', 'src/views');
 
 app.use(
   bodyParser.urlencoded({

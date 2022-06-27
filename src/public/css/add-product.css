@@ -6,11 +6,17 @@
 .form-control{
     margin: 1rem 0;
 }
-.form-control label, .form-control input{
+.form-control label, .form-control input , .form-control textarea{
     display: block;
     margin: 1rem 0;
 }
 .form-control input{
+    width: 100%;
+    border: 1px solid #dcb441;
+    font: inherit;
+    border-radius: 2px;
+}
+.form-control textarea{
     width: 100%;
     border: 1px solid #dcb441;
     font: inherit;
