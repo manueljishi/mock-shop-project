@@ -30,7 +30,6 @@ module.exports = class Product {
     getProductsFromFile(products => {
       products.push(this);
       fs.writeFile(p, JSON.stringify(products), err => {
-        console.log(err);
       });
     });
   }
@@ -41,9 +40,7 @@ module.exports = class Product {
 
   static findById(id, cb){
     getProductsFromFile( products => {
-      console.log(products)
       const product = products.find( p => p.id == id )
-      console.log(product)
       cb(product)
     })
   }
