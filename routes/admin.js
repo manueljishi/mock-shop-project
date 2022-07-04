@@ -11,7 +11,7 @@ router.get('/add-product', adminController.getAddProduct);
 
 router.get('/edit-product/:productId', adminController.getEditProduct);
 
-// /admin/products => GET
+// // /admin/products => GET
 router.get('/products', adminController.getProducts);
 
 
@@ -20,7 +20,7 @@ router.post('/add-product', adminController.postAddProduct);
 
 router.post('/edit-product', adminController.postEditProduct);
 
-//delete route
+// //delete route
 router.post('/delete-product', adminController.postDeleteProduct);
 
 module.exports = router;
